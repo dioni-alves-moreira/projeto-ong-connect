@@ -2310,3 +2310,11 @@ input.field[type="file"]:disabled::file-selector-button {
   grid-column: 1/-1;
   width: 100%;
 }
+
+/* Imagens ilustrativas locais dos cadastros fictícios */
+.project-cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

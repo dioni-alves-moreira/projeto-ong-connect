@@ -95,3 +95,11 @@ A demonstração inicia com **6 ONGs e 17 projetos** cadastrados nos arquivos `d
 | **Total** | **17** |
 
 A arrecadação inicial de cada projeto é um valor fictício usado para demonstrar gráficos e indicadores; as contribuições simuladas feitas pelo visitante são somadas localmente. Cadastros ou edições antigos armazenados no `localStorage` podem fazer o navegador exibir quantidades ou informações diferentes das originais; para testar os dados-base, utilize uma sessão limpa ou remova os dados locais da origem do projeto.
+
+## Conteúdo fictício ilustrado
+
+A versão acadêmica inclui **6 ONGs e 17 projetos** com ilustrações vetoriais locais em `assets/images/demo/`. Os dados financeiros (metas e arrecadações iniciais) e números de voluntários são fictícios, gerados com semente fixa para manter os mesmos valores em todos os computadores. Não são valores reais. As imagens são ilustrações temáticas, não fotografias das organizações.
+
+## Demonstração em outro computador
+
+Os **6 cadastros de ONGs e 17 projetos**, com imagens e valores fictícios, acompanham o ZIP em `assets/js/demo-data.js` e `assets/images/demo/`. Eles aparecem em uma instalação nova sem copiar dados do navegador anterior. Alterações feitas depois pelo usuário permanecem no `localStorage` do computador de origem. Consulte `docs/DADOS_DEMONSTRACAO_PORTAVEIS.md`.

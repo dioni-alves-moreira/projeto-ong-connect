@@ -46,15 +46,24 @@ const base =
     : "";
 const data = {};
 async function loadData() {
+  // Dados de demonstração vêm embarcados no pacote: portáveis entre computadores.
+  // Os JSON permanecem como fontes legíveis para fins acadêmicos.
+  const embedded = window.ONG_CONNECT_DEMO_DATA || {};
   for (const k of ["ongs", "projetos", "oportunidades"]) {
+    if (Array.isArray(embedded[k])) {
+      data[k] = embedded[k].map((item) => ({ ...item }));
+      continue;
+    }
     try {
       const res = await fetch(base + "data/" + k + ".json");
       if (!res.ok) throw Error("HTTP " + res.status);
       data[k] = await res.json();
     } catch (e) {
-      console.error(e);
+      console.error("Falha ao carregar " + k, e);
       throw new Error(
-        "Não foi possível carregar os dados. Abra o projeto com Live Server no VS Code.",
+        "Dados demonstrativos indisponíveis. Verifique assets/js/demo-data.js e data/" +
+          k +
+          ".json.",
       );
     }
   }
@@ -67,6 +76,7 @@ async function loadData() {
     ...(store.get("projetos_edicoes", {})[p.id] || {}),
   }));
 }
+
 function candidaturas() {
   return store.get("candidaturas", []);
 }
@@ -115,12 +125,25 @@ function pct(p) {
     Math.round((100 * arrecadadoProjeto(p)) / Math.max(1, Number(p.meta) || 1)),
   );
 }
+function demoImagePath(value) {
+  if (typeof value !== "string") return "";
+  if (/^data:image\/(png|jpeg|webp);base64,/.test(value)) return value;
+  if (/^assets\/images\/demo\/[a-z0-9-]+\.svg$/.test(value))
+    return base + value;
+  return "";
+}
+function projectVisual(p) {
+  const src = demoImagePath(p.imagem);
+  return src
+    ? `<img class="project-cover-image" src="${src}" alt="Ilustração do projeto ${escapeHtml(p.titulo)}" loading="lazy">`
+    : escapeHtml(p.emoji || "🤝");
+}
 function projectCard(p) {
-  return `<article class="card"><div class="card-visual" aria-hidden="true">${p.emoji || "🤝"}</div><div class="card-body"><span class="badge">${escapeHtml(p.categoria)}</span><h3>${escapeHtml(p.titulo)}</h3><p>${escapeHtml(p.descricao)}</p><div class="small muted">${escapeHtml(ong(p.ongId)?.nome || "ONG")}</div><div class="progress" role="progressbar" aria-label="Progresso da arrecadação" aria-valuenow="${pct(p)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct(p)}%"></span></div><div class="small muted">${money(arrecadadoProjeto(p))} de ${money(p.meta)}</div><div class="card-footer"><span class="small">${p.voluntarios || 0} voluntários</span><div class="project-card-actions"><button type="button" class="btn btn-sm btn-outline project-details-open" data-project-id="${escapeHtml(p.id)}">Conhecer projeto</button><button type="button" class="btn btn-sm donation-open" data-project-id="${escapeHtml(p.id)}">Apoiar</button></div></div></div></article>`;
+  return `<article class="card"><div class="card-visual" aria-hidden="true">${projectVisual(p)}</div><div class="card-body"><span class="badge">${escapeHtml(p.categoria)}</span><h3>${escapeHtml(p.titulo)}</h3><p>${escapeHtml(p.descricao)}</p><div class="small muted">${escapeHtml(ong(p.ongId)?.nome || "ONG")}</div><div class="progress" role="progressbar" aria-label="Progresso da arrecadação" aria-valuenow="${pct(p)}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct(p)}%"></span></div><div class="small muted">${money(arrecadadoProjeto(p))} de ${money(p.meta)}</div><div class="card-footer"><span class="small">${p.voluntarios || 0} voluntários</span><div class="project-card-actions"><button type="button" class="btn btn-sm btn-outline project-details-open" data-project-id="${escapeHtml(p.id)}">Conhecer projeto</button><button type="button" class="btn btn-sm donation-open" data-project-id="${escapeHtml(p.id)}">Apoiar</button></div></div></div></article>`;
 }
 // Cartão resumido exclusivo da página inicial: sem arrecadação ou botão Apoiar.
 function homeProjectCard(p) {
-  return `<article class="card home-project-card"><div class="card-visual" aria-hidden="true">${p.emoji || "🤝"}</div><div class="card-body"><span class="badge">${escapeHtml(p.categoria)}</span><h3>${escapeHtml(p.titulo)}</h3><p class="home-project-description">${escapeHtml(p.descricao)}</p><div class="small muted home-project-ong">${escapeHtml(ong(p.ongId)?.nome || "ONG responsável")}</div><button type="button" class="btn btn-sm project-details-open home-project-button" data-project-id="${escapeHtml(p.id)}">Conhecer projeto</button></div></article>`;
+  return `<article class="card home-project-card"><div class="card-visual" aria-hidden="true">${projectVisual(p)}</div><div class="card-body"><span class="badge">${escapeHtml(p.categoria)}</span><h3>${escapeHtml(p.titulo)}</h3><p class="home-project-description">${escapeHtml(p.descricao)}</p><div class="small muted home-project-ong">${escapeHtml(ong(p.ongId)?.nome || "ONG responsável")}</div><button type="button" class="btn btn-sm project-details-open home-project-button" data-project-id="${escapeHtml(p.id)}">Conhecer projeto</button></div></article>`;
 }
 function recentProjects() {
   return [...data.projetos]
@@ -176,10 +199,9 @@ function initHomeCarousels() {
 }
 function ongCard(o) {
   const color = /^#[0-9a-fA-F]{6}$/.test(o.cor || "") ? o.cor : "#087f70";
-  const image =
-    o.imagem && /^data:image\/(png|jpeg|webp);base64,/.test(o.imagem);
+  const image = demoImagePath(o.imagem);
   const visual = image
-    ? `<img class="ong-cover-image" src="${o.imagem}" alt="Imagem da ONG ${escapeHtml(o.nome)}" loading="lazy">`
+    ? `<img class="ong-cover-image" src="${image}" alt="Imagem da ONG ${escapeHtml(o.nome)}" loading="lazy">`
     : `<span class="ong-cover-initials" aria-hidden="true">${escapeHtml(o.sigla || o.nome?.slice(0, 2) || "ONG")}</span>`;
   return `<article class="card ong-directory-card"><div class="ong-cover" style="--ong-accent:${color}">${visual}</div><div class="card-body ong-directory-body"><span class="badge">${escapeHtml(o.categoria)}</span><h3>${escapeHtml(o.nome)}</h3><p class="ong-directory-description" title="${escapeHtml(o.descricao)}">${escapeHtml(o.descricao)}</p><div class="ong-card-location small muted">📍 ${escapeHtml(o.cidade)}</div><div class="ong-card-actions"><button class="btn btn-sm btn-outline ong-details-open" type="button" data-ong-id="${escapeHtml(o.id)}" aria-label="Conhecer ${escapeHtml(o.nome)}">ⓘ Conhecer ONG</button><a class="btn btn-sm" href="${base}pages/projetos.html?ong=${encodeURIComponent(o.id)}">Ver projetos</a></div></div></article>`;
 }
@@ -331,10 +353,9 @@ function openOngDetails(id) {
   $("#ong-details-title").textContent = o.nome;
   const color = /^#[0-9a-fA-F]{6}$/.test(o.cor || "") ? o.cor : "#087f70";
   $("#ong-details-cover").style.setProperty("--ong-accent", color);
-  $("#ong-details-cover").innerHTML =
-    o.imagem && /^data:image\/(png|jpeg|webp);base64,/.test(o.imagem)
-      ? `<img src="${o.imagem}" alt="Imagem da ONG ${escapeHtml(o.nome)}">`
-      : `<span>${escapeHtml(o.sigla || o.nome.slice(0, 2))}</span>`;
+  $("#ong-details-cover").innerHTML = demoImagePath(o.imagem)
+    ? `<img src="${demoImagePath(o.imagem)}" alt="Imagem da ONG ${escapeHtml(o.nome)}">`
+    : `<span>${escapeHtml(o.sigla || o.nome.slice(0, 2))}</span>`;
   $("#ong-details-badges").innerHTML =
     `<span class="badge">${escapeHtml(o.categoria || "ONG")}</span>`;
   renderOngDetailsTab("sobre");

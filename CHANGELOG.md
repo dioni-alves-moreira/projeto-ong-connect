@@ -71,3 +71,13 @@ Documentação consolidada das entregas iterativas: portal multi-ONG; dashboard;
 ## 2026-10-09 — Ampliação dos dados demonstrativos
 - Dados iniciais ampliados para 6 ONGs fictícias e 17 projetos fictícios, com vínculos válidos.
 - README e documentação de dados atualizados.
+
+## 2026-10-09 — Ilustrações e valores de demonstração
+- Adicionadas 23 imagens SVG locais: 6 ONGs e 17 projetos.
+- Metas, arrecadações iniciais e voluntários fictícios atualizados com números reproduzíveis.
+- Cards públicos exibem imagens locais, inclusive sem internet.
+
+## 2026-10-09 — Dados demonstrativos portáteis
+- Dados iniciais incorporados em `assets/js/demo-data.js` para uso em outro computador.
+- Imagens locais predefinidas para 6 ONGs e 17 projetos preservadas.
+- Documentado o limite de portabilidade do localStorage.

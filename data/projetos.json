@@ -5,11 +5,12 @@
     "titulo": "Educação para Todos",
     "categoria": "Educação",
     "descricao": "Reforço escolar e oficinas de leitura para estudantes.",
-    "meta": 10000,
-    "arrecadado": 7200,
-    "voluntarios": 38,
+    "meta": 20500,
+    "arrecadado": 15370,
+    "voluntarios": 14,
     "status": "Ativo",
-    "emoji": "📚"
+    "emoji": "📚",
+    "imagem": "assets/images/demo/projeto-1.svg"
   },
   {
     "id": 2,
@@ -17,11 +18,12 @@
     "titulo": "Conexão Digital",
     "categoria": "Tecnologia",
     "descricao": "Oficinas de informática e inclusão digital.",
-    "meta": 15000,
-    "arrecadado": 8500,
-    "voluntarios": 22,
+    "meta": 29000,
+    "arrecadado": 6870,
+    "voluntarios": 48,
     "status": "Ativo",
-    "emoji": "💻"
+    "emoji": "💻",
+    "imagem": "assets/images/demo/projeto-2.svg"
   },
   {
     "id": 3,
@@ -29,11 +31,12 @@
     "titulo": "Biblioteca Aberta",
     "categoria": "Educação",
     "descricao": "Ampliação do acesso comunitário a livros.",
-    "meta": 6000,
-    "arrecadado": 3900,
-    "voluntarios": 17,
+    "meta": 42000,
+    "arrecadado": 20730,
+    "voluntarios": 20,
     "status": "Ativo",
-    "emoji": "📖"
+    "emoji": "📖",
+    "imagem": "assets/images/demo/projeto-3.svg"
   },
   {
     "id": 4,
@@ -41,11 +44,12 @@
     "titulo": "Alimentando Esperanças",
     "categoria": "Assistência social",
     "descricao": "Distribuição de cestas básicas a famílias cadastradas.",
-    "meta": 20000,
-    "arrecadado": 13800,
-    "voluntarios": 45,
+    "meta": 14000,
+    "arrecadado": 6920,
+    "voluntarios": 48,
     "status": "Ativo",
-    "emoji": "🥫"
+    "emoji": "🥫",
+    "imagem": "assets/images/demo/projeto-4.svg"
   },
   {
     "id": 5,
@@ -53,11 +57,12 @@
     "titulo": "Inverno Acolhedor",
     "categoria": "Assistência social",
     "descricao": "Arrecadação de agasalhos e cobertores.",
-    "meta": 8000,
-    "arrecadado": 5900,
-    "voluntarios": 31,
+    "meta": 24500,
+    "arrecadado": 8750,
+    "voluntarios": 25,
     "status": "Ativo",
-    "emoji": "🧥"
+    "emoji": "🧥",
+    "imagem": "assets/images/demo/projeto-5.svg"
   },
   {
     "id": 6,
@@ -65,11 +70,12 @@
     "titulo": "Cozinha Comunitária",
     "categoria": "Alimentação",
     "descricao": "Preparo e distribuição de refeições solidárias.",
-    "meta": 12000,
-    "arrecadado": 4200,
-    "voluntarios": 29,
+    "meta": 42000,
+    "arrecadado": 18620,
+    "voluntarios": 36,
     "status": "Ativo",
-    "emoji": "🍲"
+    "emoji": "🍲",
+    "imagem": "assets/images/demo/projeto-6.svg"
   },
   {
     "id": 7,
@@ -77,11 +83,12 @@
     "titulo": "Verde no Bairro",
     "categoria": "Meio ambiente",
     "descricao": "Plantio de mudas e recuperação de praças.",
-    "meta": 9000,
-    "arrecadado": 4300,
-    "voluntarios": 33,
+    "meta": 10000,
+    "arrecadado": 7740,
+    "voluntarios": 35,
     "status": "Ativo",
-    "emoji": "🌳"
+    "emoji": "🌳",
+    "imagem": "assets/images/demo/projeto-7.svg"
   },
   {
     "id": 8,
@@ -89,11 +96,12 @@
     "titulo": "Praia Limpa",
     "categoria": "Meio ambiente",
     "descricao": "Mutirões de limpeza e conscientização ambiental.",
-    "meta": 5000,
-    "arrecadado": 3100,
-    "voluntarios": 52,
+    "meta": 33500,
+    "arrecadado": 10620,
+    "voluntarios": 33,
     "status": "Ativo",
-    "emoji": "🌊"
+    "emoji": "🌊",
+    "imagem": "assets/images/demo/projeto-8.svg"
   },
   {
     "id": 9,
@@ -101,11 +109,12 @@
     "titulo": "Reciclar é Transformar",
     "categoria": "Meio ambiente",
     "descricao": "Oficinas de coleta seletiva e reaproveitamento.",
-    "meta": 7000,
-    "arrecadado": 2800,
-    "voluntarios": 19,
+    "meta": 20000,
+    "arrecadado": 11410,
+    "voluntarios": 23,
     "status": "Ativo",
-    "emoji": "♻️"
+    "emoji": "♻️",
+    "imagem": "assets/images/demo/projeto-9.svg"
   },
   {
     "id": 10,
@@ -113,11 +122,12 @@
     "titulo": "Saúde no Bairro",
     "categoria": "Saúde",
     "descricao": "Encontros educativos sobre prevenção, hábitos saudáveis e cuidados básicos.",
-    "meta": 12000,
-    "arrecadado": 4800,
-    "voluntarios": 24,
+    "meta": 29500,
+    "arrecadado": 22510,
+    "voluntarios": 35,
     "status": "Ativo",
-    "emoji": "🩺"
+    "emoji": "🩺",
+    "imagem": "assets/images/demo/projeto-10.svg"
   },
   {
     "id": 11,
@@ -125,11 +135,12 @@
     "titulo": "Movimento para Todos",
     "categoria": "Esporte",
     "descricao": "Aulas comunitárias de alongamento, caminhada orientada e atividade física.",
-    "meta": 9000,
-    "arrecadado": 3500,
-    "voluntarios": 16,
+    "meta": 31000,
+    "arrecadado": 12800,
+    "voluntarios": 37,
     "status": "Ativo",
-    "emoji": "🏃"
+    "emoji": "🏃",
+    "imagem": "assets/images/demo/projeto-11.svg"
   },
   {
     "id": 12,
@@ -137,11 +148,12 @@
     "titulo": "Bem-Estar na Melhor Idade",
     "categoria": "Saúde",
     "descricao": "Rodas de conversa e atividades de promoção do bem-estar de pessoas idosas.",
-    "meta": 11000,
-    "arrecadado": 6100,
-    "voluntarios": 21,
+    "meta": 34000,
+    "arrecadado": 25140,
+    "voluntarios": 19,
     "status": "Ativo",
-    "emoji": "💚"
+    "emoji": "💚",
+    "imagem": "assets/images/demo/projeto-12.svg"
   },
   {
     "id": 13,
@@ -149,11 +161,12 @@
     "titulo": "Adoção com Responsabilidade",
     "categoria": "Proteção animal",
     "descricao": "Feiras educativas e orientação sobre adoção responsável de cães e gatos.",
-    "meta": 8000,
-    "arrecadado": 2800,
-    "voluntarios": 18,
+    "meta": 38500,
+    "arrecadado": 21180,
+    "voluntarios": 48,
     "status": "Ativo",
-    "emoji": "🐾"
+    "emoji": "🐾",
+    "imagem": "assets/images/demo/projeto-13.svg"
   },
   {
     "id": 14,
@@ -161,11 +174,12 @@
     "titulo": "Cuidado Animal Comunitário",
     "categoria": "Proteção animal",
     "descricao": "Campanhas informativas sobre vacinação, higiene e cuidados veterinários básicos.",
-    "meta": 14000,
-    "arrecadado": 5600,
-    "voluntarios": 27,
+    "meta": 30500,
+    "arrecadado": 14450,
+    "voluntarios": 40,
     "status": "Ativo",
-    "emoji": "🐶"
+    "emoji": "🐶",
+    "imagem": "assets/images/demo/projeto-14.svg"
   },
   {
     "id": 15,
@@ -173,11 +187,12 @@
     "titulo": "Arte na Comunidade",
     "categoria": "Cultura",
     "descricao": "Oficinas de pintura, desenho e expressão artística para crianças e adolescentes.",
-    "meta": 10000,
-    "arrecadado": 5200,
-    "voluntarios": 23,
+    "meta": 32500,
+    "arrecadado": 19720,
+    "voluntarios": 32,
     "status": "Ativo",
-    "emoji": "🎨"
+    "emoji": "🎨",
+    "imagem": "assets/images/demo/projeto-15.svg"
   },
   {
     "id": 16,
@@ -185,11 +200,12 @@
     "titulo": "Música que Aproxima",
     "categoria": "Cultura",
     "descricao": "Iniciação musical e encontros coletivos com instrumentos de prática.",
-    "meta": 16000,
-    "arrecadado": 7200,
-    "voluntarios": 20,
+    "meta": 15500,
+    "arrecadado": 3830,
+    "voluntarios": 45,
     "status": "Ativo",
-    "emoji": "🎵"
+    "emoji": "🎵",
+    "imagem": "assets/images/demo/projeto-16.svg"
   },
   {
     "id": 17,
@@ -197,10 +213,11 @@
     "titulo": "Teatro de Todos",
     "categoria": "Cultura",
     "descricao": "Oficinas de teatro e apresentações comunitárias abertas ao público.",
-    "meta": 7500,
-    "arrecadado": 2600,
-    "voluntarios": 15,
+    "meta": 8500,
+    "arrecadado": 3790,
+    "voluntarios": 38,
     "status": "Ativo",
-    "emoji": "🎭"
+    "emoji": "🎭",
+    "imagem": "assets/images/demo/projeto-17.svg"
   }
 ]
